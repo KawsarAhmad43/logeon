@@ -3,9 +3,10 @@ composer.lock
 .phpunit.result.cache
 .DS_Store
 Thumbs.db
+.env
+.env.local
 .idea/
 .vscode/
 *.swp
 *.swo
 *~
-.env

@@ -2,334 +2,269 @@
 
 ## Overview
 
-Logeon is a Laravel package that provides a beautiful log viewer with filtering, charts, and real-time monitoring. This document explains the package architecture and how resources are installed into user projects.
+Logeon is a Laravel package that provides a beautiful log viewer with advanced filtering and visualization capabilities. This document describes the package structure and how it integrates with Laravel applications.
 
 ## Package Structure
 
 ```
-logeon/
+logeon-package/
 ├── src/
-│   ├── LogeonServiceProvider.php          # Main service provider
+│   ├── Providers/
+│   │   └── LogeonServiceProvider.php      # Service provider for package registration
 │   └── Http/
 │       └── Controllers/
-│           └── LogeonController.php       # Log viewer controller
+│           └── LogeonController.php       # Main controller for log handling
 ├── config/
-│   └── logeon.php                         # Package configuration
+│   └── logeon.php                         # Configuration file
 ├── resources/
 │   ├── views/
 │   │   └── index.blade.php               # Main dashboard view
 │   └── assets/
 │       ├── css/
-│       │   └── logeon.css                # Styles
+│       │   └── logeon.css                # Styling
 │       └── js/
 │           └── logeon.js                 # Frontend logic
 ├── routes/
 │   └── web.php                           # Package routes
+├── tests/                                 # Unit tests
 ├── composer.json                          # Package metadata
 ├── README.md                              # Documentation
-├── CHANGELOG.md                           # Version history
 ├── LICENSE.md                             # MIT License
-└── INSTALLATION.md                        # Installation guide
+├── CHANGELOG.md                           # Version history
+└── ARCHITECTURE.md                        # This file
 ```
 
-## Architecture Flow
+## Installation Flow
 
-### 1. Installation Process
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  User runs: composer require mediusware/logeon              │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│  Composer downloads package from Packagist                  │
-│  Package installed to: vendor/mediusware/logeon/            │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│  Laravel Auto-Discovery                                     │
-│  Registers: LogeonServiceProvider                           │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│  Service Provider Boot Process                              │
-│  - Loads routes from routes/web.php                         │
-│  - Loads views from resources/views                         │
-│  - Merges config from config/logeon.php                     │
-│  - Registers publishable assets                             │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│  User runs: php artisan vendor:publish --tag=logeon-assets │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│  Assets Published to User's Project:                        │
-│  - public/vendor/logeon/css/logeon.css                      │
-│  - public/vendor/logeon/js/logeon.js                        │
-└─────────────────────────────────────────────────────────────┘
+### Step 1: Composer Installation
+```bash
+composer require mediusware/logeon
 ```
 
-### 2. Runtime Architecture
+The package is installed to `vendor/mediusware/logeon/`
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│                    User's Laravel Project                     │
-│                                                               │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │  Routes (Auto-registered by Package)                   │  │
-│  │  - GET /logger          → LogeonController@index       │  │
-│  │  - GET /logger/logs     → LogeonController@getLogs     │  │
-│  │  - GET /test-logs       → Generate test logs (optional)│  │
-│  └────────────────────────────────────────────────────────┘  │
-│                           │                                   │
-│                           ▼                                   │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │  LogeonController                                       │  │
-│  │  - index(): Renders dashboard view                     │  │
-│  │  - getLogs(): Parses laravel.log and returns JSON      │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                           │                                   │
-│                           ▼                                   │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │  View: logeon::index                                    │  │
-│  │  - Loads CSS from public/vendor/logeon/css/logeon.css  │  │
-│  │  - Loads JS from public/vendor/logeon/js/logeon.js     │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                           │                                   │
-│                           ▼                                   │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │  Frontend (logeon.js)                                   │  │
-│  │  - Fetches logs from /logger/logs API                  │  │
-│  │  - Renders chart with Chart.js                         │  │
-│  │  - Handles filtering (date range, type)                │  │
-│  │  - Manages pagination                                   │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                           │                                   │
-│                           ▼                                   │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │  Log File: storage/logs/laravel.log                     │  │
-│  │  - Parsed by LogeonController                          │  │
-│  │  - Supports: INFO, ERROR, WARNING, CUSTOM              │  │
-│  │  - Includes stack traces for exceptions                │  │
-│  └────────────────────────────────────────────────────────┘  │
-└──────────────────────────────────────────────────────────────┘
-```
+### Step 2: Auto-Discovery
+Laravel's auto-discovery automatically registers the `LogeonServiceProvider` via the `extra.laravel.providers` configuration in `composer.json`.
 
-## Component Details
+### Step 3: Service Provider Registration
+The `LogeonServiceProvider` is automatically loaded and:
+- Merges configuration from `config/logeon.php`
+- Loads routes from `routes/web.php`
+- Loads views from `resources/views` with namespace `logeon::`
+- Registers publishable assets
 
-### 1. Service Provider (`LogeonServiceProvider.php`)
-
-**Responsibilities:**
-- Register package routes
-- Register package views with namespace `logeon::`
-- Merge package configuration
-- Publish assets, config, and views
-
-**Key Methods:**
-```php
-register()  // Merges config
-boot()      // Loads routes, views, publishes assets
-```
-
-### 2. Controller (`LogeonController.php`)
-
-**Responsibilities:**
-- Render the dashboard view
-- Parse Laravel log files
-- Map log levels to 4 categories (info, error, warn, custom)
-- Format stack traces and context data
-- Return logs as JSON API
-
-**Key Methods:**
-```php
-index()              // Returns dashboard view
-getLogs()            // Parses logs and returns JSON
-mapLogLevel()        // Maps Laravel levels to 4 types
-formatStackTrace()   // Formats exception traces
-formatContext()      // Pretty prints JSON context
-```
-
-### 3. Frontend (`logeon.js`)
-
-**Responsibilities:**
-- Fetch logs from API endpoint
-- Render pie chart with Chart.js
-- Handle filtering (type, date range)
-- Manage pagination
-- Display log details in modal
-
-**Key Features:**
-- Real-time log updates
-- Combined filters (type + date)
-- Badge and dropdown synchronization
-- Dynamic chart updates
-
-### 4. Configuration (`config/logeon.php`)
-
-**Configurable Options:**
-```php
-'route_prefix'       // Default: 'logger'
-'middleware'         // Default: ['web']
-'log_file'          // Default: storage_path('logs/laravel.log')
-'per_page'          // Default: 10
-'enable_test_route' // Default: false in production
-```
-
-## Resource Publishing
-
-### Assets (Required)
-
+### Step 4: Asset Publishing
 ```bash
 php artisan vendor:publish --tag=logeon-assets
 ```
 
-**Published to:**
-- `public/vendor/logeon/css/logeon.css`
-- `public/vendor/logeon/js/logeon.js`
+This copies:
+- **Config**: `config/logeon.php` → `config/logeon.php`
+- **Views**: `resources/views/` → `resources/views/vendor/logeon/`
+- **Assets**: `resources/assets/` → `public/vendor/logeon/`
 
-### Config (Optional)
+## Resource Installation Locations
 
+When a user installs the package, resources are published to:
+
+### Configuration
+```
+vendor/mediusware/logeon/config/logeon.php
+    ↓ (published to)
+config/logeon.php
+```
+
+### Views
+```
+vendor/mediusware/logeon/resources/views/index.blade.php
+    ↓ (published to)
+resources/views/vendor/logeon/index.blade.php
+```
+
+### Assets (CSS/JS)
+```
+vendor/mediusware/logeon/resources/assets/css/logeon.css
+vendor/mediusware/logeon/resources/assets/js/logeon.js
+    ↓ (published to)
+public/vendor/logeon/css/logeon.css
+public/vendor/logeon/js/logeon.js
+```
+
+## Service Provider Details
+
+### Register Method
+- Merges package configuration with application configuration
+- Allows users to override settings via `config/logeon.php`
+
+### Boot Method
+- Loads routes from `routes/web.php`
+- Loads views with namespace `logeon::`
+- Registers publishable assets with tags:
+  - `logeon-config` - Configuration file only
+  - `logeon-views` - Views only
+  - `logeon-assets` - CSS/JS assets only
+  - `logeon` - All resources
+
+## Routes
+
+The package registers the following routes (configurable via `config/logeon.php`):
+
+```php
+GET  /logger              → LogeonController@index    (name: logeon.index)
+GET  /logger/logs         → LogeonController@getLogs  (name: logeon.logs)
+GET  /test-logs           → Generate test logs        (conditional)
+```
+
+Route prefix and middleware are configurable:
+```php
+'route_prefix' => env('LOGEON_ROUTE_PREFIX', 'logger'),
+'middleware' => ['web'],
+```
+
+## Controller Flow
+
+### LogeonController
+
+**index()** - Display the dashboard
+1. Reads configuration
+2. Renders `logeon::index` view
+3. Passes configuration to view
+
+**getLogs()** - API endpoint for log data
+1. Reads log file from configured path
+2. Parses logs using regex patterns
+3. Maps log levels to 4 types (info, error, warn, custom)
+4. Returns JSON response with:
+   - Timestamp
+   - Log type
+   - Message
+   - Context (if available)
+   - Stack trace (if exception)
+
+## Frontend Architecture
+
+### Views (Blade)
+- Uses Bootstrap 5 for styling
+- Includes Chart.js for visualization
+- Dynamic API endpoint via `window.LOGEON_API_URL`
+
+### JavaScript (logeon.js)
+- Fetches logs from API endpoint
+- Implements filtering logic:
+  - Type filtering (dropdown + badges)
+  - Date range filtering
+  - Combined filtering
+- Updates pie chart dynamically
+- Handles pagination
+- Displays log details in modal
+
+### Styling (logeon.css)
+- Custom styles for dashboard
+- Responsive design
+- Badge styling
+- Modal styling
+
+## Configuration Options
+
+```php
+return [
+    // Route prefix for accessing the log viewer
+    'route_prefix' => env('LOGEON_ROUTE_PREFIX', 'logger'),
+    
+    // Middleware to protect the log viewer
+    'middleware' => ['web'],
+    
+    // Path to the log file
+    'log_file' => storage_path('logs/laravel.log'),
+    
+    // Number of logs per page
+    'per_page' => 10,
+    
+    // Enable test route (disabled in production by default)
+    'enable_test_route' => env('LOGEON_ENABLE_TEST_ROUTE', env('APP_ENV') !== 'production'),
+];
+```
+
+## Log Parsing
+
+The controller parses Laravel's monolog format:
+
+```
+[2025-12-10 11:30:01] local.INFO: User logged in {"user_id":123}
+[2025-12-10 11:30:02] local.ERROR: Payment failed {"order_id":456}
+```
+
+Parsing steps:
+1. Split logs by timestamp pattern
+2. Extract timestamp, level, message
+3. Parse JSON context if present
+4. Extract stack trace if exception
+5. Map level to type (info/error/warn/custom)
+
+## Security Considerations
+
+1. **Middleware Protection**: Configure middleware in `config/logeon.php`
+   ```php
+   'middleware' => ['web', 'auth', 'admin'],
+   ```
+
+2. **Production Safety**: Test route disabled by default in production
+
+3. **Log File Access**: Only reads configured log file path
+
+4. **No Database Access**: Reads from file system only
+
+## Publishing Workflow
+
+### For Package Developers
+
+1. Create package in separate repository
+2. Push to GitHub
+3. Register on Packagist
+4. Users install via `composer require mediusware/logeon`
+
+### For Package Users
+
+1. Install: `composer require mediusware/logeon`
+2. Publish assets: `php artisan vendor:publish --tag=logeon-assets`
+3. Configure: Edit `config/logeon.php` (optional)
+4. Access: Visit `/logger` in browser
+
+## Extending the Package
+
+### Custom Configuration
+Publish and edit `config/logeon.php`:
 ```bash
 php artisan vendor:publish --tag=logeon-config
 ```
 
-**Published to:**
-- `config/logeon.php`
-
-### Views (Optional)
-
+### Custom Views
+Publish and edit views:
 ```bash
 php artisan vendor:publish --tag=logeon-views
 ```
 
-**Published to:**
-- `resources/views/vendor/logeon/index.blade.php`
+Edit `resources/views/vendor/logeon/index.blade.php`
 
-### All Resources
-
+### Custom Styling
+Publish and edit CSS:
 ```bash
-php artisan vendor:publish --tag=logeon
+php artisan vendor:publish --tag=logeon-assets
 ```
 
-## Log Parsing Logic
+Edit `public/vendor/logeon/css/logeon.css`
 
-### Supported Log Levels
+## Testing
 
-| Laravel Level | Logeon Type | Color  |
-|--------------|-------------|--------|
-| emergency    | error       | Red    |
-| alert        | error       | Red    |
-| critical     | error       | Red    |
-| error        | error       | Red    |
-| warning      | warn        | Yellow |
-| notice       | warn        | Yellow |
-| info         | info        | Blue   |
-| debug        | info        | Blue   |
-| custom       | custom      | Purple |
-
-### Log Format Support
-
-1. **Simple Logs**
-   ```
-   [2025-12-10 12:00:00] local.INFO: User logged in
-   ```
-
-2. **Logs with Context**
-   ```
-   [2025-12-10 12:00:00] local.INFO: User logged in {"user_id":123}
-   ```
-
-3. **Logs with Exceptions**
-   ```
-   [2025-12-10 12:00:00] local.ERROR: Payment failed
-   Stack trace:
-   #0 /path/to/file.php(123): method()
-   #1 {main}
-   ```
-
-## Security Considerations
-
-### Default Security
-- Routes use `web` middleware by default
-- Test route disabled in production
-
-### Recommended Protection
-
-Add authentication middleware in config:
-```php
-'middleware' => ['web', 'auth', 'admin'],
+Run tests:
+```bash
+composer test
 ```
 
-Or use custom middleware:
-```php
-'middleware' => ['web', 'can:view-logs'],
-```
-
-## Customization
-
-### Custom Route Prefix
-
-```php
-// config/logeon.php
-'route_prefix' => 'admin/logs',
-```
-
-Access at: `http://yourapp.com/admin/logs`
-
-### Custom Log File
-
-```php
-// config/logeon.php
-'log_file' => storage_path('logs/custom.log'),
-```
-
-### Custom Views
-
-After publishing views, customize:
-```
-resources/views/vendor/logeon/index.blade.php
-```
-
-## Dependencies
-
-### PHP Dependencies
-- PHP ^8.2
-- Laravel ^11.0 or ^12.0
-
-### Frontend Dependencies (CDN)
-- Bootstrap 5.3.3
-- Chart.js (latest)
-
-## Performance Considerations
-
-1. **Large Log Files**: The package reads the entire log file. For very large files (>100MB), consider log rotation.
-
-2. **Caching**: No caching is implemented by default. Logs are parsed on each request.
-
-3. **Pagination**: Frontend pagination only. All logs are loaded initially.
-
-## Future Enhancements
-
-- [ ] Server-side pagination for large log files
-- [ ] Real-time log streaming with WebSockets
-- [ ] Log file rotation management
-- [ ] Export logs to CSV/JSON
-- [ ] Search functionality
-- [ ] Multiple log file support
-- [ ] Log level statistics over time
+Tests are located in `tests/` directory.
 
 ## Support
 
-- **GitHub**: https://github.com/KawsarAhmad43/logeon
-- **Issues**: https://github.com/KawsarAhmad43/logeon/issues
-- **Email**: kawsarahmad43@gmail.com
-
-## License
-
-MIT License - See LICENSE.md for details
+For issues or questions:
+- GitHub: https://github.com/KawsarAhmad43/logeon
+- Email: kawsar@mediusware.com

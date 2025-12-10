@@ -23,7 +23,7 @@ All notable changes to `logeon` will be documented in this file.
 - Responsive design for mobile and desktop
 
 ### Features
-- Parse all Laravel log levels (emergency, alert, critical, error, warning, notice, info, debug)
+- Parse all Laravel log levels
 - Map log levels to 4 categories for simplified viewing
 - Format exception stack traces with line breaks
 - Pretty print JSON context data
@@ -31,9 +31,3 @@ All notable changes to `logeon` will be documented in this file.
 - Dynamic chart updates based on filters
 - Combined filtering (date + type)
 - Badge and dropdown filter synchronization
-
-### Security
-- Configurable middleware protection
-- Test route disabled in production by default
-- No external dependencies for core functionality
-

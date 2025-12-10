@@ -1,53 +1,50 @@
 {
     "name": "mediusware/logeon",
-    "description": "A beautiful Laravel log viewer with filtering, charts, and real-time monitoring capabilities",
+    "description": "A beautiful Laravel log viewer with filtering, charts, and real-time monitoring",
     "type": "library",
-    "keywords": [
-        "laravel",
-        "log",
-        "viewer",
-        "monitoring",
-        "debugging",
-        "mediusware",
-        "log-viewer",
-        "laravel-log",
-        "log-monitoring"
-    ],
-    "homepage": "https://github.com/KawsarAhmad43/logeon",
     "license": "MIT",
     "authors": [
         {
             "name": "Kawsar Ahmad",
-            "email": "kawsarahmad43@gmail.com",
-            "homepage": "https://github.com/KawsarAhmad43",
-            "role": "Developer"
-        },
-        {
-            "name": "Mediusware",
-            "email": "info@mediusware.com",
-            "homepage": "https://mediusware.com"
+            "email": "kawsar@mediusware.com",
+            "homepage": "https://github.com/KawsarAhmad43"
         }
+    ],
+    "homepage": "https://github.com/KawsarAhmad43/logeon",
+    "keywords": [
+        "laravel",
+        "log",
+        "viewer",
+        "logger",
+        "monitoring",
+        "debugging"
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/support": "^11.0|^12.0"
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/routing": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "laravel/framework": "^12.0"
     },
     "autoload": {
         "psr-4": {
             "Mediusware\\Logeon\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Mediusware\\Logeon\\Tests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "Mediusware\\Logeon\\LogeonServiceProvider"
+                "Mediusware\\Logeon\\Providers\\LogeonServiceProvider"
             ]
         }
     },
-    "support": {
-        "issues": "https://github.com/KawsarAhmad43/logeon/issues",
-        "source": "https://github.com/KawsarAhmad43/logeon"
-    },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }

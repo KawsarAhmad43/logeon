@@ -126,7 +126,7 @@ class LogeonController extends Controller
             if ($decoded !== null) {
                 return json_encode($decoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
             }
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             // If JSON decode fails, return as is
         }
 

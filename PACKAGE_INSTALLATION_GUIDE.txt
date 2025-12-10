@@ -1,0 +1,268 @@
+================================================================================
+                    LOGEON PACKAGE - INSTALLATION GUIDE
+================================================================================
+
+This guide covers:
+1. How to install the package in any Laravel project
+2. How to publish the package to GitHub and Packagist
+3. Complete verification checklist
+
+================================================================================
+PART 1: INSTALLING LOGEON IN ANY LARAVEL PROJECT
+================================================================================
+
+PREREQUISITES:
+--------------
+- Laravel 11.x or 12.x
+- PHP 8.2 or higher
+- Composer installed
+
+INSTALLATION STEPS:
+-------------------
+
+Step 1: Install via Composer
+-----------------------------
+Once published to Packagist, run:
+
+    composer require mediusware/logeon
+
+For local testing (before publishing):
+
+    # In your Laravel project's composer.json, add:
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../logeon-package"
+        }
+    ]
+    
+    # Then run:
+    composer require mediusware/logeon
+
+Step 2: Publish Assets
+-----------------------
+Publish CSS, JS, and configuration files:
+
+    php artisan vendor:publish --tag=logeon-assets
+
+This will copy:
+- public/vendor/logeon/css/logeon.css
+- public/vendor/logeon/js/logeon.js
+- config/logeon.php
+
+Step 3: Access the Dashboard
+-----------------------------
+Visit: http://yourapp.com/logger
+
+Step 4: (Optional) Generate Test Logs
+--------------------------------------
+If enabled in config, visit:
+
+    http://yourapp.com/test-logs
+
+Then check the dashboard at /logger
+
+CONFIGURATION OPTIONS:
+----------------------
+
+Edit config/logeon.php to customize:
+
+1. Route Prefix (default: 'logger')
+   'route_prefix' => 'logs',  // Access at /logs instead
+
+2. Middleware Protection
+   'middleware' => ['web', 'auth', 'admin'],  // Protect with auth
+
+3. Log File Path
+   'log_file' => storage_path('logs/custom.log'),
+
+4. Logs Per Page
+   'per_page' => 20,
+
+5. Enable/Disable Test Route
+   'enable_test_route' => false,  // Disable in production
+
+PUBLISHING OPTIONS:
+-------------------
+
+Publish only config:
+    php artisan vendor:publish --tag=logeon-config
+
+Publish only views:
+    php artisan vendor:publish --tag=logeon-views
+
+Publish only assets (CSS/JS):
+    php artisan vendor:publish --tag=logeon-assets
+
+Publish everything:
+    php artisan vendor:publish --tag=logeon
+
+TROUBLESHOOTING:
+----------------
+
+Issue: "Route not found"
+Solution: Clear route cache
+    php artisan route:clear
+    php artisan cache:clear
+
+Issue: "Assets not loading"
+Solution: Re-publish assets
+    php artisan vendor:publish --tag=logeon-assets --force
+
+Issue: "No logs showing"
+Solution: Check log file exists
+    ls -la storage/logs/laravel.log
+    # Generate test logs at /test-logs
+
+Issue: "Permission denied"
+Solution: Fix permissions
+    chmod -R 775 storage/logs
+    chown -R www-data:www-data storage/logs
+
+UNINSTALLATION:
+---------------
+
+    composer remove mediusware/logeon
+    rm -rf public/vendor/logeon
+    rm -rf resources/views/vendor/logeon
+    rm config/logeon.php
+
+================================================================================
+PART 2: PUBLISHING THE PACKAGE TO GITHUB & PACKAGIST
+================================================================================
+
+STEP 1: PREPARE THE PACKAGE
+----------------------------
+
+1. Ensure all files are ready:
+   ✓ composer.json is valid
+   ✓ README.md exists
+   ✓ LICENSE.md exists
+   ✓ All PHP files have no syntax errors
+   ✓ Namespace is correct
+
+2. Create .gitignore (if not exists):
+   vendor/
+   .idea/
+   .vscode/
+   .DS_Store
+   composer.lock
+
+STEP 2: PUBLISH TO GITHUB
+--------------------------
+
+1. Create a new repository on GitHub:
+   - Go to https://github.com/new
+   - Name: logeon
+   - Description: A beautiful Laravel log viewer with filtering, charts, and real-time monitoring
+   - Public repository
+   - Don't initialize with README (we have one)
+
+2. Initialize Git and push:
+
+    cd /home/kawsar-ahmad/logeon-package
+    git init
+    git add .
+    git commit -m "Initial release v1.0.0"
+    git branch -M main
+    git remote add origin https://github.com/KawsarAhmad43/logeon.git
+    git push -u origin main
+
+3. Create a release tag:
+
+    git tag -a v1.0.0 -m "Release version 1.0.0"
+    git push origin v1.0.0
+
+STEP 3: PUBLISH TO PACKAGIST
+-----------------------------
+
+1. Go to https://packagist.org/
+2. Click "Submit" in the top menu
+3. Enter your GitHub repository URL:
+   https://github.com/KawsarAhmad43/logeon
+4. Click "Check"
+5. Click "Submit"
+
+6. Set up auto-update (recommended):
+   - Go to your package page on Packagist
+   - Click "Settings"
+   - Copy the webhook URL
+   - Go to GitHub repository → Settings → Webhooks
+   - Add webhook with the Packagist URL
+   - Content type: application/json
+   - Select "Just the push event"
+
+STEP 4: VERIFY INSTALLATION
+----------------------------
+
+After publishing, test in a fresh Laravel project:
+
+    composer create-project laravel/laravel test-logeon
+    cd test-logeon
+    composer require mediusware/logeon
+    php artisan vendor:publish --tag=logeon-assets
+    php artisan serve
+
+Visit: http://localhost:8000/logger
+
+================================================================================
+VERIFICATION CHECKLIST
+================================================================================
+
+Before Publishing:
+------------------
+✓ composer.json is valid (composer validate --strict)
+✓ All PHP files have no syntax errors
+✓ Namespace matches directory structure
+✓ Service provider is correctly registered
+✓ README.md is complete
+✓ LICENSE.md exists
+✓ .gitignore is configured
+
+After Publishing to GitHub:
+---------------------------
+✓ Repository is public
+✓ All files are pushed
+✓ Release tag v1.0.0 is created
+✓ README displays correctly on GitHub
+
+After Publishing to Packagist:
+------------------------------
+✓ Package appears on Packagist
+✓ Can install via composer require
+✓ Auto-update webhook is configured
+✓ Package badge shows "stable"
+
+Final Testing:
+--------------
+✓ Install in fresh Laravel project
+✓ Publish assets successfully
+✓ Dashboard loads at /logger
+✓ Test logs generate correctly
+✓ Filters work properly
+✓ Chart displays correctly
+✓ Modal shows log details
+
+================================================================================
+PACKAGE INFORMATION
+================================================================================
+
+Package Name:     mediusware/logeon
+Version:          1.0.0
+Author:           Kawsar Ahmad
+Email:            kawsar@mediusware.com
+GitHub:           https://github.com/KawsarAhmad43/logeon
+License:          MIT
+PHP Requirement:  ^8.2
+Laravel:          ^11.0|^12.0
+
+================================================================================
+SUPPORT & CONTRIBUTION
+================================================================================
+
+Issues:           https://github.com/KawsarAhmad43/logeon/issues
+Pull Requests:    https://github.com/KawsarAhmad43/logeon/pulls
+Documentation:    See README.md and INSTALLATION.md
+
+================================================================================
+
