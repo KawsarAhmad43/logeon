@@ -1,0 +1,53 @@
+{
+    "name": "mediusware/logeon",
+    "description": "A beautiful Laravel log viewer with filtering, charts, and real-time monitoring capabilities",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "log",
+        "viewer",
+        "monitoring",
+        "debugging",
+        "mediusware",
+        "log-viewer",
+        "laravel-log",
+        "log-monitoring"
+    ],
+    "homepage": "https://github.com/KawsarAhmad43/logeon",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kawsar Ahmad",
+            "email": "kawsarahmad43@gmail.com",
+            "homepage": "https://github.com/KawsarAhmad43",
+            "role": "Developer"
+        },
+        {
+            "name": "Mediusware",
+            "email": "info@mediusware.com",
+            "homepage": "https://mediusware.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mediusware\\Logeon\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mediusware\\Logeon\\LogeonServiceProvider"
+            ]
+        }
+    },
+    "support": {
+        "issues": "https://github.com/KawsarAhmad43/logeon/issues",
+        "source": "https://github.com/KawsarAhmad43/logeon"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

@@ -1,0 +1,54 @@
+    body {
+      background: #f5f7fa;
+      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .card {
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      height: 100%;
+    }
+    .filter-card {
+      background: #ffffff;
+    }
+    .chart-card {
+      background: #ffffff;
+    }
+    .logs-card {
+      background: #ffffff;
+      margin-top: 2rem;
+    }
+    .log-type-badge {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .log-type-badge:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+    .log-type-badge.active {
+      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+      transform: scale(1.05);
+    }
+    .badge-info { background: #0dcaf0; color: white; }
+    .badge-error { background: #dc3545; color: white; }
+    .badge-warn { background: #fd7e14; color: white; }
+    .badge-custom { background: #6f42c1; color: white; }
+    .table-container {
+      max-height: 520px;
+      overflow-y: auto;
+    }
+    .table thead {
+      background: #f8f9fa;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    h5 {
+      font-weight: 600;
+      color: #2c3e50;
+    }
