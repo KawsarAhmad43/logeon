@@ -54,7 +54,7 @@ git push -u origin main
    
    ## Installation
    ```bash
-   composer require mediusware/logeon
+   composer require kawsarahmad43/logeon
    php artisan vendor:publish --tag=logeon-assets
    ```
    
@@ -93,7 +93,7 @@ composer create-project laravel/laravel test-logeon
 cd test-logeon
 
 # Install the package
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 
 # Publish assets
 php artisan vendor:publish --tag=logeon-assets
@@ -158,7 +158,7 @@ Examples:
 
 ### Installation fails
 
-1. Verify package name is correct: `mediusware/logeon`
+1. Verify package name is correct: `kawsarahmad43/logeon`
 2. Check PHP version requirement (^8.2)
 3. Check Laravel version requirement (^11.0|^12.0)
 4. Run `composer update` instead of `composer install`
@@ -190,4 +190,4 @@ Examples:
 
 For questions about publishing:
 - GitHub: https://github.com/KawsarAhmad43/logeon/issues
-- Packagist: https://packagist.org/packages/mediusware/logeon
+- Packagist: https://packagist.org/packages/kawsarahmad43/logeon

@@ -7,7 +7,7 @@ Complete guide for installing and configuring the Logeon package in your Laravel
 ### 1. Install Package
 
 ```bash
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 ```
 
 ### 2. Publish Assets
@@ -25,11 +25,11 @@ Visit: `http://yourapp.com/logger`
 ### Step 1: Install via Composer
 
 ```bash
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 ```
 
 This will:
-- Download the package to `vendor/mediusware/logeon/`
+- Download the package to `vendor/kawsarahmad43/logeon/`
 - Auto-register the `LogeonServiceProvider`
 - Load package routes and views
 
@@ -275,13 +275,13 @@ chown -R www-data:www-data storage/logs
 Verify installation:
 
 ```bash
-composer show mediusware/logeon
+composer show kawsarahmad43/logeon
 ```
 
 If not found, reinstall:
 
 ```bash
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 ```
 
 ## Uninstallation
@@ -290,7 +290,7 @@ Remove the package:
 
 ```bash
 # Remove package
-composer remove mediusware/logeon
+composer remove kawsarahmad43/logeon
 
 # Remove published files (optional)
 rm -rf public/vendor/logeon
@@ -310,5 +310,5 @@ rm config/logeon.php
 
 For help:
 - GitHub Issues: https://github.com/KawsarAhmad43/logeon/issues
-- Email: kawsar@mediusware.com
+- Email: ahmad43.bu@gmail.com
 - Documentation: https://github.com/KawsarAhmad43/logeon

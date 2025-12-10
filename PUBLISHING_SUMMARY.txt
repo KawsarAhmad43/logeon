@@ -54,7 +54,7 @@ PHASE 3: Test (10 minutes)
 ---------------------------
 1. Wait 10 minutes for Packagist to index
 2. Create test project: composer create-project laravel/laravel test
-3. Install package: composer require mediusware/logeon
+3. Install package: composer require kawsarahmad43/logeon
 4. Test dashboard: php artisan serve → http://localhost:8000/logger
 
 ================================================================================
@@ -119,7 +119,7 @@ Submit to Packagist:
 https://packagist.org/packages/submit
 
 After Publishing:
-- Your Package: https://packagist.org/packages/mediusware/logeon
+- Your Package: https://packagist.org/packages/kawsarahmad43/logeon
 - Your Repo: https://github.com/KawsarAhmad43/logeon
 
 ================================================================================
@@ -140,7 +140,7 @@ git push origin v1.0.0
 cd ~
 composer create-project laravel/laravel test-logeon
 cd test-logeon
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 php artisan vendor:publish --tag=logeon-assets
 php artisan serve
 # Visit: http://127.0.0.1:8000/logger
@@ -172,7 +172,7 @@ You'll know you're successful when:
 ✅ GitHub shows your repository with all files
 ✅ GitHub shows "1 release" badge
 ✅ Packagist shows your package
-✅ composer require mediusware/logeon works
+✅ composer require kawsarahmad43/logeon works
 ✅ php artisan vendor:publish --tag=logeon-assets works
 ✅ Dashboard loads at http://localhost:8000/logger
 ✅ Test logs appear and all features work
@@ -208,7 +208,7 @@ Share your package:
 
 Monitor:
 - GitHub Issues: https://github.com/KawsarAhmad43/logeon/issues
-- Packagist Stats: https://packagist.org/packages/mediusware/logeon/stats
+- Packagist Stats: https://packagist.org/packages/kawsarahmad43/logeon/stats
 - Downloads and stars
 
 Update:
@@ -219,14 +219,14 @@ Update:
 📊 PACKAGE INFORMATION
 ================================================================================
 
-Name:        mediusware/logeon
+Name:        kawsarahmad43/logeon
 Version:     1.0.0
 Type:        Laravel Package
 License:     MIT
 PHP:         ^8.2
 Laravel:     ^11.0|^12.0
 Author:      Kawsar Ahmad
-Email:       kawsar@mediusware.com
+Email:       ahmad43.bu@gmail.com
 Description: A beautiful Laravel log viewer with filtering, charts, and 
              real-time monitoring
 

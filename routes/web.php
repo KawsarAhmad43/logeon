@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Mediusware\Logeon\Http\Controllers\LogeonController;
+use KawsarAhmad43\Logeon\Http\Controllers\LogeonController;
 
 $prefix = config('logeon.route_prefix', 'logger');
 $middleware = config('logeon.middleware', ['web']);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mediusware\Logeon\Providers;
+namespace KawsarAhmad43\Logeon\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

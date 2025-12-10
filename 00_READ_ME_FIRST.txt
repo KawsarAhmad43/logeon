@@ -76,14 +76,14 @@
 🎯 PACKAGE INFORMATION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  Name:        mediusware/logeon
+  Name:        kawsarahmad43/logeon
   Version:     1.0.0
   Author:      Kawsar Ahmad (KawsarAhmad43)
   License:     MIT
   PHP:         ^8.2
   Laravel:     ^11.0|^12.0
   GitHub:      https://github.com/KawsarAhmad43/logeon
-  Packagist:   https://packagist.org/packages/mediusware/logeon
+  Packagist:   https://packagist.org/packages/kawsarahmad43/logeon
 
 ✨ FEATURES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -159,7 +159,7 @@
 📞 SUPPORT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  Email:              kawsar@mediusware.com
+  Email:              ahmad43.bu@gmail.com
   GitHub Issues:      https://github.com/KawsarAhmad43/logeon/issues
   Documentation:      See included markdown files
 

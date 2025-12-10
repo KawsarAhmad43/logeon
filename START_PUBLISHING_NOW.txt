@@ -135,7 +135,7 @@ STEP 6: SUBMIT TO PACKAGIST (3 minutes)
 
 6. Click "Check"
    - Packagist will validate your repository
-   - Should show: "The package name mediusware/logeon is available"
+   - Should show: "The package name kawsarahmad43/logeon is available"
 
 7. Click "Submit"
 
@@ -153,7 +153,7 @@ Part A: Get Webhook URL from Packagist
 ---------------------------------------
 1. On Packagist, click your username (top right)
 2. Click "Your packages"
-3. Click on "mediusware/logeon"
+3. Click on "kawsarahmad43/logeon"
 4. Click "Settings" tab
 5. Find and COPY the webhook URL
    (looks like: https://packagist.org/api/github?username=...)
@@ -182,13 +182,13 @@ Part B: Add Webhook to GitHub
 STEP 8: VERIFY PACKAGE IS LIVE (1 minute)
 ================================================================================
 
-1. Go to: https://packagist.org/packages/mediusware/logeon
+1. Go to: https://packagist.org/packages/kawsarahmad43/logeon
 
 You should see:
-✓ Package name: mediusware/logeon
+✓ Package name: kawsarahmad43/logeon
 ✓ Version: v1.0.0
 ✓ Description
-✓ Install command: composer require mediusware/logeon
+✓ Install command: composer require kawsarahmad43/logeon
 ✓ GitHub link
 ✓ Downloads: 0 (will increase as people use it)
 
@@ -209,7 +209,7 @@ composer create-project laravel/laravel test-logeon-install
 cd test-logeon-install
 
 # Install your package
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 
 # Publish assets
 php artisan vendor:publish --tag=logeon-assets
@@ -272,7 +272,7 @@ git push origin v1.0.0
 cd ~
 composer create-project laravel/laravel test-logeon-install
 cd test-logeon-install
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 php artisan vendor:publish --tag=logeon-assets
 php artisan serve
 
@@ -283,7 +283,7 @@ IMPORTANT LINKS
 Create GitHub Token: https://github.com/settings/tokens
 Create GitHub Repo: https://github.com/new
 Packagist Submit: https://packagist.org/packages/submit
-Your Package (after publishing): https://packagist.org/packages/mediusware/logeon
+Your Package (after publishing): https://packagist.org/packages/kawsarahmad43/logeon
 Your GitHub Repo (after creating): https://github.com/KawsarAhmad43/logeon
 
 ================================================================================

@@ -7,7 +7,7 @@ FOR END USERS (Installing in Laravel Project):
 
 1. INSTALL PACKAGE
    ---------------
-   composer require mediusware/logeon
+   composer require kawsarahmad43/logeon
 
 2. PUBLISH ASSETS
    --------------
@@ -93,7 +93,7 @@ CONFIGURATION OPTIONS (config/logeon.php):
 PACKAGE INFO:
 =============
 
-Name:     mediusware/logeon
+Name:     kawsarahmad43/logeon
 Version:  1.0.0
 Author:   Kawsar Ahmad
 GitHub:   https://github.com/KawsarAhmad43/logeon

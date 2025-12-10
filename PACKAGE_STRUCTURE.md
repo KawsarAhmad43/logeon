@@ -189,9 +189,9 @@ logeon-package/
 When a user installs the package:
 
 ```
-1. composer require mediusware/logeon
+1. composer require kawsarahmad43/logeon
    ↓
-2. Package downloaded to vendor/mediusware/logeon/
+2. Package downloaded to vendor/kawsarahmad43/logeon/
    ↓
 3. Auto-discovery registers LogeonServiceProvider
    ↓
@@ -213,22 +213,22 @@ When a user installs the package:
 
 **Configuration**:
 ```
-vendor/mediusware/logeon/config/logeon.php
+vendor/kawsarahmad43/logeon/config/logeon.php
     ↓ (published to)
 config/logeon.php
 ```
 
 **Views**:
 ```
-vendor/mediusware/logeon/resources/views/index.blade.php
+vendor/kawsarahmad43/logeon/resources/views/index.blade.php
     ↓ (published to)
 resources/views/vendor/logeon/index.blade.php
 ```
 
 **Assets**:
 ```
-vendor/mediusware/logeon/resources/assets/css/logeon.css
-vendor/mediusware/logeon/resources/assets/js/logeon.js
+vendor/kawsarahmad43/logeon/resources/assets/css/logeon.css
+vendor/kawsarahmad43/logeon/resources/assets/js/logeon.js
     ↓ (published to)
 public/vendor/logeon/css/logeon.css
 public/vendor/logeon/js/logeon.js
@@ -261,7 +261,7 @@ public/vendor/logeon/js/logeon.js
 ## Namespace Structure
 
 ```
-Mediusware\Logeon\
+KawsarAhmad43\Logeon\
 ├── LogeonServiceProvider
 └── Http\
     └── Controllers\
@@ -270,7 +270,7 @@ Mediusware\Logeon\
 
 ## Configuration Hierarchy
 
-1. **Package Default** - `vendor/mediusware/logeon/config/logeon.php`
+1. **Package Default** - `vendor/kawsarahmad43/logeon/config/logeon.php`
 2. **Published Config** - `config/logeon.php` (if published)
 3. **Environment Variables** - `.env` file
 4. **Runtime Override** - `config('logeon.*')`
@@ -312,6 +312,6 @@ Edit `public/vendor/logeon/css/logeon.css`
 ## Support & Contribution
 
 - **GitHub**: https://github.com/KawsarAhmad43/logeon
-- **Packagist**: https://packagist.org/packages/mediusware/logeon
+- **Packagist**: https://packagist.org/packages/kawsarahmad43/logeon
 - **Issues**: https://github.com/KawsarAhmad43/logeon/issues
-- **Email**: kawsar@mediusware.com
+- **Email**: ahmad43.bu@gmail.com

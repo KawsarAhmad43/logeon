@@ -47,7 +47,7 @@ Complete checklist for setting up and publishing the Logeon package.
 ### Package Metadata
 - [ ] Verify `composer.json` is valid
 - [ ] Check author information
-- [ ] Verify package name: `mediusware/logeon`
+- [ ] Verify package name: `kawsarahmad43/logeon`
 - [ ] Check PHP requirement: `^8.2`
 - [ ] Check Laravel requirement: `^11.0|^12.0`
 - [ ] Verify license: MIT
@@ -92,7 +92,7 @@ Complete checklist for setting up and publishing the Logeon package.
 - [ ] Wait for indexing (usually a few minutes)
 
 ### Step 2: Verify Package
-- [ ] Check package on Packagist: https://packagist.org/packages/mediusware/logeon
+- [ ] Check package on Packagist: https://packagist.org/packages/kawsarahmad43/logeon
 - [ ] Verify all information is correct
 - [ ] Check version is listed
 
@@ -112,7 +112,7 @@ Complete checklist for setting up and publishing the Logeon package.
 
 ### Installation Test
 - [ ] Create test Laravel project: `composer create-project laravel/laravel test-logeon`
-- [ ] Install package: `composer require mediusware/logeon`
+- [ ] Install package: `composer require kawsarahmad43/logeon`
 - [ ] Publish assets: `php artisan vendor:publish --tag=logeon-assets`
 - [ ] Check files are published correctly
 - [ ] Generate test logs: `http://localhost:8000/test-logs`
@@ -120,7 +120,7 @@ Complete checklist for setting up and publishing the Logeon package.
 - [ ] Verify all features work
 
 ### Package Verification
-- [ ] Check on Packagist: https://packagist.org/packages/mediusware/logeon
+- [ ] Check on Packagist: https://packagist.org/packages/kawsarahmad43/logeon
 - [ ] Check on GitHub: https://github.com/KawsarAhmad43/logeon
 - [ ] Verify download count
 - [ ] Check package statistics
@@ -222,7 +222,7 @@ Once all items are checked:
 
 ---
 
-**Package**: mediusware/logeon
+**Package**: kawsarahmad43/logeon
 **GitHub**: https://github.com/KawsarAhmad43/logeon
-**Packagist**: https://packagist.org/packages/mediusware/logeon
+**Packagist**: https://packagist.org/packages/kawsarahmad43/logeon
 **Author**: Kawsar Ahmad (KawsarAhmad43)

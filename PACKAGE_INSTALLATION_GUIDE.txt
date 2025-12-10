@@ -24,7 +24,7 @@ Step 1: Install via Composer
 -----------------------------
 Once published to Packagist, run:
 
-    composer require mediusware/logeon
+    composer require kawsarahmad43/logeon
 
 For local testing (before publishing):
 
@@ -37,7 +37,7 @@ For local testing (before publishing):
     ]
     
     # Then run:
-    composer require mediusware/logeon
+    composer require kawsarahmad43/logeon
 
 Step 2: Publish Assets
 -----------------------
@@ -122,7 +122,7 @@ Solution: Fix permissions
 UNINSTALLATION:
 ---------------
 
-    composer remove mediusware/logeon
+    composer remove kawsarahmad43/logeon
     rm -rf public/vendor/logeon
     rm -rf resources/views/vendor/logeon
     rm config/logeon.php
@@ -199,7 +199,7 @@ After publishing, test in a fresh Laravel project:
 
     composer create-project laravel/laravel test-logeon
     cd test-logeon
-    composer require mediusware/logeon
+    composer require kawsarahmad43/logeon
     php artisan vendor:publish --tag=logeon-assets
     php artisan serve
 
@@ -247,10 +247,10 @@ Final Testing:
 PACKAGE INFORMATION
 ================================================================================
 
-Package Name:     mediusware/logeon
+Package Name:     kawsarahmad43/logeon
 Version:          1.0.0
 Author:           Kawsar Ahmad
-Email:            kawsar@mediusware.com
+Email:            ahmad43.bu@gmail.com
 GitHub:           https://github.com/KawsarAhmad43/logeon
 License:          MIT
 PHP Requirement:  ^8.2

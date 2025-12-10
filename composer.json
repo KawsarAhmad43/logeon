@@ -1,12 +1,12 @@
 {
-    "name": "mediusware/logeon",
+    "name": "kawsarahmad43/logeon",
     "description": "A beautiful Laravel log viewer with filtering, charts, and real-time monitoring",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Kawsar Ahmad",
-            "email": "kawsar@mediusware.com",
+            "email": "ahmad43.bu@gmail.com",
             "homepage": "https://github.com/KawsarAhmad43"
         }
     ],
@@ -30,18 +30,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Mediusware\\Logeon\\": "src/"
+            "KawsarAhmad43\\Logeon\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mediusware\\Logeon\\Tests\\": "tests/"
+            "KawsarAhmad43\\Logeon\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Mediusware\\Logeon\\Providers\\LogeonServiceProvider"
+                "KawsarAhmad43\\Logeon\\Providers\\LogeonServiceProvider"
             ]
         }
     },

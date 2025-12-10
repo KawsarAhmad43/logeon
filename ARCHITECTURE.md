@@ -38,10 +38,10 @@ logeon-package/
 
 ### Step 1: Composer Installation
 ```bash
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 ```
 
-The package is installed to `vendor/mediusware/logeon/`
+The package is installed to `vendor/kawsarahmad43/logeon/`
 
 ### Step 2: Auto-Discovery
 Laravel's auto-discovery automatically registers the `LogeonServiceProvider` via the `extra.laravel.providers` configuration in `composer.json`.
@@ -69,22 +69,22 @@ When a user installs the package, resources are published to:
 
 ### Configuration
 ```
-vendor/mediusware/logeon/config/logeon.php
+vendor/kawsarahmad43/logeon/config/logeon.php
     ↓ (published to)
 config/logeon.php
 ```
 
 ### Views
 ```
-vendor/mediusware/logeon/resources/views/index.blade.php
+vendor/kawsarahmad43/logeon/resources/views/index.blade.php
     ↓ (published to)
 resources/views/vendor/logeon/index.blade.php
 ```
 
 ### Assets (CSS/JS)
 ```
-vendor/mediusware/logeon/resources/assets/css/logeon.css
-vendor/mediusware/logeon/resources/assets/js/logeon.js
+vendor/kawsarahmad43/logeon/resources/assets/css/logeon.css
+vendor/kawsarahmad43/logeon/resources/assets/js/logeon.js
     ↓ (published to)
 public/vendor/logeon/css/logeon.css
 public/vendor/logeon/js/logeon.js
@@ -221,11 +221,11 @@ Parsing steps:
 1. Create package in separate repository
 2. Push to GitHub
 3. Register on Packagist
-4. Users install via `composer require mediusware/logeon`
+4. Users install via `composer require kawsarahmad43/logeon`
 
 ### For Package Users
 
-1. Install: `composer require mediusware/logeon`
+1. Install: `composer require kawsarahmad43/logeon`
 2. Publish assets: `php artisan vendor:publish --tag=logeon-assets`
 3. Configure: Edit `config/logeon.php` (optional)
 4. Access: Visit `/logger` in browser
@@ -267,4 +267,4 @@ Tests are located in `tests/` directory.
 
 For issues or questions:
 - GitHub: https://github.com/KawsarAhmad43/logeon
-- Email: kawsar@mediusware.com
+- Email: ahmad43.bu@gmail.com

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mediusware\Logeon\Http\Controllers;
+namespace KawsarAhmad43\Logeon\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 

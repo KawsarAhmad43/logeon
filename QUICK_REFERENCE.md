@@ -6,7 +6,7 @@ Fast lookup for common tasks and commands.
 
 ```bash
 # Install package
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 
 # Publish assets
 php artisan vendor:publish --tag=logeon-assets
@@ -132,7 +132,7 @@ php artisan view:clear
 php artisan vendor:publish --tag=logeon-assets --force
 
 # Check installation
-composer show mediusware/logeon
+composer show kawsarahmad43/logeon
 
 # Validate composer.json
 composer validate
@@ -140,7 +140,7 @@ composer validate
 
 ## File Locations
 
-**Package**: `vendor/mediusware/logeon/`
+**Package**: `vendor/kawsarahmad43/logeon/`
 **Config**: `config/logeon.php`
 **Views**: `resources/views/vendor/logeon/`
 **Assets**: `public/vendor/logeon/`
@@ -190,7 +190,7 @@ git push origin main
 ## Useful Links
 
 - **GitHub**: https://github.com/KawsarAhmad43/logeon
-- **Packagist**: https://packagist.org/packages/mediusware/logeon
+- **Packagist**: https://packagist.org/packages/kawsarahmad43/logeon
 - **Issues**: https://github.com/KawsarAhmad43/logeon/issues
 - **Laravel Docs**: https://laravel.com/docs
 - **Packagist Docs**: https://packagist.org/about
@@ -203,10 +203,10 @@ git push origin main
 | Routes not working | `php artisan route:clear` |
 | No logs showing | Check `storage/logs/laravel.log` exists |
 | Permission denied | `chmod -R 775 storage/logs` |
-| Package not found | `composer require mediusware/logeon` |
+| Package not found | `composer require kawsarahmad43/logeon` |
 
 ## Support
 
-- **Email**: kawsar@mediusware.com
+- **Email**: ahmad43.bu@gmail.com
 - **GitHub Issues**: https://github.com/KawsarAhmad43/logeon/issues
 - **Documentation**: See README.md, INSTALLATION.md, ARCHITECTURE.md

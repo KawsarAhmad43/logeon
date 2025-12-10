@@ -19,7 +19,7 @@ Logeon is a beautiful Laravel log viewer package that transforms your applicatio
 
 ```bash
 # 1. Install the package
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 
 # 2. Publish assets
 php artisan vendor:publish --tag=logeon-assets
@@ -62,7 +62,7 @@ Choose the right document for your needs:
 → See **INSTALLATION.md**
 
 ```bash
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 php artisan vendor:publish --tag=logeon-assets
 ```
 
@@ -110,9 +110,9 @@ git commit -m "Initial commit: Logeon v1.0.0"
 
 ## 📦 Package Information
 
-- **Name**: `mediusware/logeon`
+- **Name**: `kawsarahmad43/logeon`
 - **GitHub**: https://github.com/KawsarAhmad43/logeon
-- **Packagist**: https://packagist.org/packages/mediusware/logeon
+- **Packagist**: https://packagist.org/packages/kawsarahmad43/logeon
 - **Author**: Kawsar Ahmad (KawsarAhmad43)
 - **License**: MIT
 - **Version**: 1.0.0
@@ -122,7 +122,7 @@ git commit -m "Initial commit: Logeon v1.0.0"
 ## 🚀 Next Steps
 
 ### If you're a user:
-1. Install: `composer require mediusware/logeon`
+1. Install: `composer require kawsarahmad43/logeon`
 2. Publish: `php artisan vendor:publish --tag=logeon-assets`
 3. Visit: `http://yourapp.com/logger`
 4. Read: `INSTALLATION.md` for configuration
@@ -136,7 +136,7 @@ git commit -m "Initial commit: Logeon v1.0.0"
 ### If you need help:
 1. Check: `QUICK_REFERENCE.md` for common commands
 2. Read: `INSTALLATION.md` for troubleshooting
-3. Email: kawsar@mediusware.com
+3. Email: ahmad43.bu@gmail.com
 4. GitHub Issues: https://github.com/KawsarAhmad43/logeon/issues
 
 ## 📋 File Structure
@@ -191,7 +191,7 @@ The log viewer is protected by:
 
 ## 📞 Support
 
-- **Email**: kawsar@mediusware.com
+- **Email**: ahmad43.bu@gmail.com
 - **GitHub Issues**: https://github.com/KawsarAhmad43/logeon/issues
 - **Documentation**: See included markdown files
 
@@ -219,4 +219,4 @@ Everything is set up and documented. Choose your path above and get started!
 **Version**: 1.0.0
 **License**: MIT
 
-**Questions?** Email: kawsar@mediusware.com
+**Questions?** Email: ahmad43.bu@gmail.com

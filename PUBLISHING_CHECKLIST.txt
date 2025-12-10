@@ -79,7 +79,7 @@ PHASE 3: PACKAGIST PUBLISHING ⏱️ 5 minutes
 
 [ ] 3.8 Click "Add webhook"
 
-[ ] 3.9 Visit https://packagist.org/packages/mediusware/logeon
+[ ] 3.9 Visit https://packagist.org/packages/kawsarahmad43/logeon
         Verify package is visible
 
 ✅ Phase 3 Complete? → Continue to Phase 4
@@ -94,7 +94,7 @@ PHASE 4: TEST INSTALLATION ⏱️ 10 minutes
 
 [ ] 4.3 Run: cd test-logeon-install
 
-[ ] 4.4 Run: composer require mediusware/logeon
+[ ] 4.4 Run: composer require kawsarahmad43/logeon
 
 [ ] 4.5 Run: php artisan vendor:publish --tag=logeon-assets
 
@@ -149,7 +149,7 @@ git push origin v1.0.0
 cd ~
 composer create-project laravel/laravel test-logeon-install
 cd test-logeon-install
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 php artisan vendor:publish --tag=logeon-assets
 php artisan serve
 
@@ -162,7 +162,7 @@ GitHub Repository:
 https://github.com/KawsarAhmad43/logeon
 
 Packagist Package:
-https://packagist.org/packages/mediusware/logeon
+https://packagist.org/packages/kawsarahmad43/logeon
 
 GitHub Personal Access Tokens:
 https://github.com/settings/tokens

@@ -6,9 +6,9 @@
 
 ### Key Information
 
-- **Package Name**: `mediusware/logeon`
+- **Package Name**: `kawsarahmad43/logeon`
 - **GitHub**: https://github.com/KawsarAhmad43/logeon
-- **Packagist**: https://packagist.org/packages/mediusware/logeon
+- **Packagist**: https://packagist.org/packages/kawsarahmad43/logeon
 - **Author**: Kawsar Ahmad (KawsarAhmad43)
 - **License**: MIT
 - **Version**: 1.0.0
@@ -43,8 +43,8 @@ Logeon is a Laravel package that transforms your application's log files into a 
 
 ### Installation Process
 
-1. **User runs**: `composer require mediusware/logeon`
-2. **Composer downloads** package to `vendor/mediusware/logeon/`
+1. **User runs**: `composer require kawsarahmad43/logeon`
+2. **Composer downloads** package to `vendor/kawsarahmad43/logeon/`
 3. **Laravel auto-discovers** the `LogeonServiceProvider`
 4. **Service provider registers**:
    - Routes (`/logger`, `/logger/logs`)
@@ -64,13 +64,13 @@ When published, resources are installed to:
 ```
 Package Location              Published Location
 ─────────────────────────────────────────────────────────
-vendor/mediusware/logeon/     config/logeon.php
+vendor/kawsarahmad43/logeon/     config/logeon.php
 config/logeon.php             
 
-vendor/mediusware/logeon/     resources/views/vendor/logeon/
+vendor/kawsarahmad43/logeon/     resources/views/vendor/logeon/
 resources/views/              index.blade.php
 
-vendor/mediusware/logeon/     public/vendor/logeon/
+vendor/kawsarahmad43/logeon/     public/vendor/logeon/
 resources/assets/             css/logeon.css
                               js/logeon.js
 ```
@@ -208,7 +208,7 @@ Provides:
 
 ```bash
 # 1. Install
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 
 # 2. Publish assets
 php artisan vendor:publish --tag=logeon-assets
@@ -221,7 +221,7 @@ http://yourapp.com/logger
 
 ```bash
 # Install package
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 
 # Publish all resources
 php artisan vendor:publish --tag=logeon
@@ -339,7 +339,7 @@ All routes are configurable via `config/logeon.php`.
 
 ### For Package Users
 
-1. Install: `composer require mediusware/logeon`
+1. Install: `composer require kawsarahmad43/logeon`
 2. Publish: `php artisan vendor:publish --tag=logeon-assets`
 3. Configure: Edit `config/logeon.php` (optional)
 4. Use: Visit `/logger` in browser
@@ -367,7 +367,7 @@ php artisan vendor:publish --tag=logeon-assets
 - GitHub Issues: https://github.com/KawsarAhmad43/logeon/issues
 
 ### Getting Help
-- Email: kawsar@mediusware.com
+- Email: ahmad43.bu@gmail.com
 - Documentation: See included markdown files
 
 ### Contributing
@@ -406,9 +406,9 @@ Logeon is a complete, production-ready Laravel package that provides a professio
 ### Quick Links
 
 - **GitHub**: https://github.com/KawsarAhmad43/logeon
-- **Packagist**: https://packagist.org/packages/mediusware/logeon
+- **Packagist**: https://packagist.org/packages/kawsarahmad43/logeon
 - **Author**: Kawsar Ahmad
-- **Email**: kawsar@mediusware.com
+- **Email**: ahmad43.bu@gmail.com
 
 ---
 

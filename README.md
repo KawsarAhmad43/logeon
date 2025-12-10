@@ -23,7 +23,7 @@ A beautiful, modern Laravel log viewer with advanced filtering, visual charts, a
 ### Step 1: Install via Composer
 
 ```bash
-composer require mediusware/logeon
+composer require kawsarahmad43/logeon
 ```
 
 ### Step 2: Publish Assets
@@ -102,4 +102,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 For issues or questions, please visit:
 - GitHub: https://github.com/KawsarAhmad43/logeon
-- Email: kawsar@mediusware.com
+- Email: ahmad43.bu@gmail.com
